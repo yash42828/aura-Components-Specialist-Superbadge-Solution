@@ -1,0 +1,5 @@
+# Complete this 2 steps
+*In the Setup > Security > Session Settings section, disable the component cache by deactivating the setting for Enable secure and persistent browser caching to improve performance.
+*Install this unmanaged package(https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000Q3CM) in your newly created Trailhead Playground. 
+ This package contains all schema for the Apex logic needed to complete this challenge. You won’t need to make any changes to the data schema. 
+  If you have trouble installing the unmanaged package, follow the `Prework and Notes` section resolve.
