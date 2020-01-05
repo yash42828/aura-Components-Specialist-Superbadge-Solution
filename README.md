@@ -8,7 +8,7 @@ This is my personal code for completing this Superbadges. The code covers Salesf
 
 # What You'll Be Doing to Earn This Superbadge
 
-Convert Salesforce Lightning Design System markup into a fully functional Aura component.
+1.Convert Salesforce Lightning Design System markup into a fully functional Aura component.
 Theme Aura components using the Lightning Design System and custom CSS.
 Surface Aura components in Lightning App Builder, Lightning Experience, the Salesforce App, and a Lightning application.
 Create and invoke Apex controller methods to read data from custom objects.
