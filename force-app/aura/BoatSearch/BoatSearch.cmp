@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+<aura:registerEvent name="formsubmit" type="c:FormSubmit"/>
+ <!-- dynamically load the BoatTypes -->
+ <aura:attribute name="selectedType" type="String" default="foo"/>
+<lightning:card title="Find a Boat" class="slds-m-top_10px" >
+     <c:BoatSearchForm />
+</lightning:card>    
+<lightning:card title="Matching Boats" >
+     <c:BoatSearchResults /> 
+</lightning:card>
+
+
+</aura:component>

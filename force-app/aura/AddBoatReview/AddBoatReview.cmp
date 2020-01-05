@@ -1,0 +1,53 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <!-- ATTS -->
+    <aura:attribute name="boat" type="Boat__c" />
+    <aura:attribute name="id" type="Id" /> 
+    <aura:attribute name="review" type="BoatReview__c" access="global"/>
+    <aura:attribute name="boatReview" type="BoatReview__c" access="global"/>
+    <aura:attribute name="recordError" type="String" access="global"/>
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="BoatReviewAdded" type="c:BoatReviewAdded"/>
+    <!-- LDS -->
+    <force:recordData aura:id="service"                      
+                      layoutType="FULL"
+                      mode="EDIT"                                   
+                      fields="Id, Name, Comment__c, Boat__c, Rating__c"          
+                      targetRecord="{!v.review}"                     
+                      targetFields="{!v.boatReview}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.onRecordUpdated}"/>
+    
+                                           
+    <!-- LAYOUT -->                    
+    <lightning:layout multipleRows="true">
+
+        <lightning:layoutItem size="12" padding="around-small">                       
+            <lightning:input aura:id="title" name="Title" label="Title" value="{!v.boatReview.Name}"/>                  
+        </lightning:layoutItem>
+                   
+        <lightning:layoutItem size="12" padding="around-small">                           
+            <label class="slds-form-element__label" for="commentField">Description</label>           
+            <lightning:inputRichText aura:id="comment" value="{!v.boatReview.Comment__c}" disabledCategories="FORMAT_FONT"/>
+        </lightning:layoutItem>
+                   
+        <lightning:layoutItem size="12" padding="around-small">                     
+            <label class="slds-form-element__label" for="input-id-01">Description</label>                   
+            <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false" aura:id="FiveStarRating"/>                
+        </lightning:layoutItem>
+                           
+        <lightning:layoutItem size="12" class="slds-align--absolute-center">                                
+            <lightning:button iconName="utility:save" onclick="{!c.onSave}" label="Submit"/>            
+        </lightning:layoutItem>
+               
+    </lightning:layout>                    
+            
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">                       
+            <ui:message title="Error" severity="error" closable="true">                           
+                {!v.recordError}                       
+            </ui:message>                   
+        </div>               
+    </aura:if>
+
+</aura:component>

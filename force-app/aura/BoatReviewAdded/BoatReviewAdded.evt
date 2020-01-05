@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="BoatReviewAdded">
+        <aura:attribute name="boatReview" type="Boat__c"/>
+</aura:event>
