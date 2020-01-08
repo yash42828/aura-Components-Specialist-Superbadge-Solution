@@ -1,3 +1,0 @@
-<aura:event type="APPLICATION" description="">
-    <aura:attribute name="boat" type="Boat__c"/>
-</aura:event>
